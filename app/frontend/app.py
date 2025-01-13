@@ -20,21 +20,41 @@ model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
 # Title for the Streamlit app
 st.title('Patient Record Interaction App')
 
-@st.cache_data()
+@st.cache_data
 def load_data():
+    """
+    Load data from a FastAPI endpoint and cache it for reuse.
+
+    Returns:
+        pd.DataFrame: The loaded data as a Pandas DataFrame.
+    """
     # Define the URL of the FastAPI endpoint
     api_url = "https://ehr-api-8vsk.onrender.com/load_data/"
 
-    # Make a GET request to the FastAPI endpoint
-    response = requests.get(api_url)
+    try:
+        # Make a GET request to the FastAPI endpoint with a timeout
+        response = requests.get(api_url, timeout=10)
 
-    # Parse the JSON data
-    data = response.json().get('data')
+        # Check if the request was successful
+        if response.status_code == 200:
+            # Parse the JSON response
+            data = response.json().get('data')
 
-    # Convert JSON string to DataFrame directly
-    df = pd.read_json(data)
-    return df
+            if isinstance(data, list):  # Ensure data is a list
+                # Convert the list of dictionaries to a DataFrame
+                df = pd.DataFrame(data)
+                return df
+            else:
+                st.error("Invalid data format: Expected a list of dictionaries.")
+                return pd.DataFrame()  # Return an empty DataFrame
+        else:
+            st.error(f"Failed to fetch data. Status code: {response.status_code}")
+            return pd.DataFrame()
 
+    except requests.exceptions.RequestException as e:
+        st.error(f"An error occurred while fetching data: {e}")
+        return pd.DataFrame()
+    
 df=load_data()
 
 # Endpoint URL
