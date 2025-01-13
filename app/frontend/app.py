@@ -76,9 +76,9 @@ def chat_with_embeddings(symptom_text, df):
     formatted_prompt = f"Based on the following historical data, the similar patient has the simlar following problem: {retrieved_data['explanation'].tolist()} \
         and provide insights and treatment suggestions. \
         Those patient has medical records and patterns are: {retrieved_data['user'].tolist()}.\
-        Do the following: 
+        Do the following: \
         - Analyse similar pattern of historical patient by pulling insights from the relationship between their historical medical records and the stated above problem\
-        - Based on all above information, give adivces for the my {symptom_text}" 
+        - Based on all above information, give adivces for the my {symptom_text}\" 
 
     payload = {
         "contents": [
