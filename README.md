@@ -1,5 +1,6 @@
 # EHR_deployment
-Data link: https://github.com/buithehai1994/EHR_data/tree/main/data
+Processed Data link: https://github.com/buithehai1994/EHR_data/tree/main/data
+(Original source: https://huggingface.co/datasets/FiscaAI/synth-ehr-icd10cm-prompt"
 
 API link: https://ehr-api-8vsk.onrender.com/
 
