@@ -13,9 +13,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy the entire app directory inside the app folder
 COPY app ./app
 
-# Ensure the data directory is copied into the container
-COPY data ./data
-
 # Expose the port the app runs on
 EXPOSE 8000
 
