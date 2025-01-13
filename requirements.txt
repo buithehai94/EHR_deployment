@@ -1,0 +1,12 @@
+python-dotenv
+uvicorn
+fastapi
+pandas
+requests
+diskcache
+dask[complete]
+pyarrow
+fastparquet
+pyspark
+streamlit
+sentence_transformers
