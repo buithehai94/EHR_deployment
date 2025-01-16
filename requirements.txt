@@ -10,3 +10,4 @@ fastparquet
 pyspark
 streamlit
 sentence_transformers
+chromadb
