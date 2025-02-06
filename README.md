@@ -5,4 +5,4 @@ Original Data Source: https://huggingface.co/datasets/FiscaAI/synth-ehr-icd10cm-
 
 API link: https://ehr-api-8vsk.onrender.com/
 
-Streamlit app link: [https://ehr-app.streamlit.app/](https://ehr-app.streamlit.app/)]
+Streamlit app link: https://ehr-app.streamlit.app/
