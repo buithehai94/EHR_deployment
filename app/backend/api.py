@@ -7,7 +7,7 @@ from io import StringIO  # Import StringIO
 app = FastAPI()
 
 # Define the live JSON URL
-json_url = "https://raw.githubusercontent.com/buithehai1994/EHR/refs/heads/main/data/chunk_2.json"
+json_url = "https://raw.githubusercontent.com/buithehai1994/EHR_data/refs/heads/main/data/chunk_1.json"
 
 @app.get("/")
 def read_root():
