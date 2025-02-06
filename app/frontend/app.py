@@ -29,7 +29,7 @@ def load_data():
         pd.DataFrame: The loaded data as a Pandas DataFrame.
     """
     # Define the URL of the FastAPI endpoint
-    api_url = "https://fastapi-backend-1nkx.onrender.com/load_data/"
+    api_url = "https://ehr-api-8vsk.onrender.com/load_data/"
 
     try:
         # Make a GET request to the FastAPI endpoint with a timeout
